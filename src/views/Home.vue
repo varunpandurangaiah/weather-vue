@@ -20,7 +20,7 @@
           <div class="degree">
             <div class="num">{{temps}}<sup>o</sup>C</div>
             <div class="forecast-icon">
-              <img src="images/icons/icon-1.svg" alt="" width=90>
+              <img :src="'http://openweathermap.org/img/w/'+icon+'.png'" alt="" width=90>
             </div>
           </div>
           <span><img src="images/icon-compass.png" alt="">Wind Speed: {{wind}}</span>
@@ -95,7 +95,8 @@ export default {
       city: [],
       wind: [],
       string: [],
-      code: []
+      code: [],
+      icon: []
           };
   },
   methods: {
@@ -104,12 +105,13 @@ export default {
       let searchEndPoint = "https://api.openweathermap.org/data/2.5/weather"; //API URL
       let url = `${searchEndPoint}?q=${this.searchTerm}&units=metric&appid=${apiKey}`;
       axios.get(url).then(response => {
-      console.log(response);
+      console.log(response.data);
       this.string = response.data.name;
       this.temps = response.data.main.temp;
       this.city = response.data.name;
       this.wind = response.data.wind.deg;
       this.code = response.data.cod;
+      this.icon = response.data.weather[0].icon;
   })
   .catch(error => {
       console.log(error);
