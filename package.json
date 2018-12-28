@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "start": "node main.js",
     "deploy": "npm run build && now --public && now alias",
     "lint": "vue-cli-service lint"
   },
