@@ -5,8 +5,8 @@
       <a href="/" class="branding">
         <img src="images/logo.png" alt="" class="logo">
         <div class="logo-type">
-          <h1 class="site-title">Company name</h1>
-          <small class="site-description">tagline goes here</small>
+          <h1 class="site-title">Weather Application</h1>
+          <small class="site-description">In Deg. Celsius</small>
         </div>
       </a>
 
