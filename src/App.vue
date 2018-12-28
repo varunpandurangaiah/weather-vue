@@ -1,31 +1,30 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div>
+  <div class="site-header">
+    <div class="container">
+      <a href="/" class="branding">
+        <img src="images/logo.png" alt="" class="logo">
+        <div class="logo-type">
+          <h1 class="site-title">Company name</h1>
+          <small class="site-description">tagline goes here</small>
+        </div>
+      </a>
+
+      <!-- Default snippet for navigation -->
+      <div class="main-navigation" id="nav">
+        <button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+        <ul class="menu">
+            <router-link to="/"><li class="menu-item current-menu-item"><a>Home</a></li></router-link>
+            <router-link to="/about"><li class="menu-item"><a>About</a></li></router-link>
+        </ul> <!-- .menu -->
+      </div> <!-- .main-navigation -->
+
+      <div class="mobile-navigation"></div>
+      <router-view/>
+
     </div>
-    <router-view/>
+  </div>
+  <!-- .site-header -->
+
   </div>
 </template>
-
-<style>
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
